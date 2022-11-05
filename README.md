@@ -32,8 +32,8 @@ Make sure your terminal is open in the directory where Collatz_Conjecture.c file
 gcc Collatz_Conjecture.c -o Collatz_Conjecture
 ./Collatz_Conjecture
 ```
-### Important System Calls used in the Program
-#### fork()
+## Important System Calls used in the Program
+### fork()
 Fork system call is used for creating a new process, which is called child process, which runs concurrently with the process that makes the fork() call (parent process). 
 It takes no parameters and returns an integer value.  
 Different return types of fork() are
@@ -52,17 +52,17 @@ fork ();   // Line 2
  /  \    /  \   //  created by line 2
 P1  P3  P2  P4  // There will be 4 child processes 
 </pre>
-#### wait()
+### wait()
 A call to wait() blocks the calling process until one of its child processes exits or a signal is received. After child process terminates, parent continues its execution after wait system call instruction.  
   
 ![s (1)](https://user-images.githubusercontent.com/58753266/200109353-c448023d-1f51-4d66-9c36-39b41ec6650b.jpg)
 
-##### Syntax
+#### Syntax
 ```
 pid_t wait(int *stat_loc);  
 ```
 Takes one argument status and returns a process ID of dead children or returns -1 immediatly if the process has no child process.  
 
-### Working of the program
+## Working of the program
 The program first asks the user to enter a number to run the Collatz Conjecture.  Then `fork()` is called and the child process is created.  
 if(pid==0) only allows the child process to run the code inside if statement.  The parent process will be waiting for the child process to finish its execution because of the wait(NULL) statement. Then parent process will also be terminated.

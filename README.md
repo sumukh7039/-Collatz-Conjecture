@@ -55,9 +55,14 @@ P1  P3  P2  P4  // There will be 4 child processes
 #### wait()
 A call to wait() blocks the calling process until one of its child processes exits or a signal is received. After child process terminates, parent continues its execution after wait system call instruction.  
   
-![image](https://user-images.githubusercontent.com/58753266/200108512-f9424bef-9de9-47ad-b75c-9c1aa76f6410.png)
+![s (1)](https://user-images.githubusercontent.com/58753266/200109353-c448023d-1f51-4d66-9c36-39b41ec6650b.jpg)
+
 ##### Syntax
 ```
 pid_t wait(int *stat_loc);  
 ```
 Takes one argument status and returns a process ID of dead children or returns -1 immediatly if the process has no child process.  
+
+### Working of the program
+The program first asks the user to enter a number to run the Collatz Conjecture.  Then `fork()` is called and the child process is created.  
+if(pid==0) only allows the child process to run the code inside if statement.  The parent process will be waiting for the child process to finish its execution because of the wait(NULL) statement. Then parent process will also be terminated.

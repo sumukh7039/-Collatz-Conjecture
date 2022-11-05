@@ -64,5 +64,13 @@ pid_t wait(int *stat_loc);
 Takes one argument status and returns a process ID of dead children or returns -1 immediatly if the process has no child process.  
 
 ## Working of the program
-The program first asks the user to enter a number to run the Collatz Conjecture.  Then `fork()` is called and the child process is created.  
-if(pid==0) only allows the child process to run the code inside if statement.  The parent process will be waiting for the child process to finish its execution because of the wait(NULL) statement. Then parent process will also be terminated.
+<ul>
+<li>The program first asks the user to enter a number to run the Collatz Conjecture.</li>
+<li> Then <code>fork()</code> is called and the child process is created.</li>
+<li><code>if(pid==0)</code> only allows the child process to run the code inside if statement. So child process runs the Collatz Conjecture. </li>
+<li>The parent process will be waiting for the child process to finish its execution because of the <code>wait(NULL)</code> statement.</li>
+<li>Then parent process will also be terminated.</li>
+</ul>
+
+## Sample Output of the Program  
+![image](https://user-images.githubusercontent.com/58753266/200119413-01a17525-5604-4b12-8625-305c24a3c014.png)
